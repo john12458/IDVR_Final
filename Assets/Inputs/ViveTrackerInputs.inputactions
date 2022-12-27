@@ -1,0 +1,102 @@
+{
+    "name": "ViveTrackerInputs",
+    "maps": [
+        {
+            "name": "LeftKneeViveTracker",
+            "id": "49710f5a-a556-4ce6-93c0-f703d8f27bc0",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "fc1373aa-4496-497a-b886-4d0b7a4e86d6",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "690befe7-5cfa-4fa5-b26a-31220d66a35b",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f53ce08d-aaed-4d72-9fad-c7a5cb179097",
+                    "path": "<XRViveTracker>{Left Knee}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c67964d0-5a9c-42fd-89b4-67b2c78e6b7e",
+                    "path": "<XRViveTracker>{Left Knee}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "WaistViveTracker",
+            "id": "3ae20149-032a-4cc0-9ee0-6b31d46322a7",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "eb72fe31-57ac-4205-9c37-4d423d5bf006",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "b24e8979-cdea-4c5a-94df-132f7420668a",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e034dee0-734d-4c3c-b606-8aa8878140c5",
+                    "path": "<XRViveTracker>{Waist}/devicePose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "466035ba-37bc-44f0-9345-ada34516cd98",
+                    "path": "<XRViveTracker>{Waist}/devicePose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
