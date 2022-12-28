@@ -34,8 +34,8 @@ namespace PathCreation.Examples
             timer = 0;
             mp = transform.GetComponent<MoveProvider>();
             bear = GameObject.FindWithTag("Bear");
-            runMaxdistance = 700;
-            rideMaxdistance = 1500;
+            runMaxdistance = 300;
+            rideMaxdistance = 800;
             bikeMaxdistance = 2000;
             pz = mp.xr.transform.position.z;
             pz2 = mp.xr2.transform.position.z;
@@ -58,7 +58,7 @@ namespace PathCreation.Examples
                     break;
                 case MoveProvider.MoveState.RIDE:
                     Debug.Log("ride mode");
-                    ratio = 1.8f;
+                    ratio = 1.6f;
                     bear.SetActive(true);
                     distanceTravelled = runMaxdistance;
                     maxdistance = rideMaxdistance;

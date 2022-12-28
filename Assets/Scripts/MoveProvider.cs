@@ -48,13 +48,18 @@ public class MoveProvider : LocomotionProvider
         // transform.position += foward_value *new Vector3( cam.transform.forward.x, 0 ,  cam.transform.forward.z);
         if(foward_value < 50){
             pf.speed = foward_value*2;
+            // pf.speed += 3f;
+            pf.speed = Mathf.Min(35, pf.speed);
         }
         else{
+            // pf.speed -= 0.8f;
+            // pf.speed = Mathf.Max(0, pf.speed);
             pf.speed = 35;
         }
 
         
         rx = xr.transform.eulerAngles.x;
+        // rx = xr.transform.rotation.x;
         // Debug.Log("xr = "+ pf.speed ) ;
 
     }
@@ -116,9 +121,9 @@ public class MoveProvider : LocomotionProvider
             bikeObject.SetActive(true);
             UnityEngine.InputSystem.XR.TrackedPoseDriver track_pose_driver = cam.GetComponent<UnityEngine.InputSystem.XR.TrackedPoseDriver>();
             track_pose_driver.trackingType = UnityEngine.InputSystem.XR.TrackedPoseDriver.TrackingType.RotationOnly;
-            // float cam_height = 1.2f;
+            float cam_height = 0.85f;
             // // 防止camera卡在車裡面
-            // camtransform.localPosition  = new Vector3(camtransform.localPosition.x, cam_height, camtransform.localPosition.z);
+            camtransform.localPosition  = new Vector3(camtransform.localPosition.x, cam_height, camtransform.localPosition.z);
             pf.enabled = false;
         }
 

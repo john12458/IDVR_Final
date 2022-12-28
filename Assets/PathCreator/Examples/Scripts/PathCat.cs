@@ -35,7 +35,7 @@ namespace PathCreation.Examples
             {
                 case MoveProvider.MoveState.RUN:
                     distanceTravelled=0;
-                    maxdistance = pf.runMaxdistance + 2;
+                    maxdistance = pf.runMaxdistance +1;
                     break;
                 case MoveProvider.MoveState.RIDE:
                     distanceTravelled=pf.runMaxdistance;
