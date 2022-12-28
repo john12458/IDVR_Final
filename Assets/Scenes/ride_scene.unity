@@ -2143,6 +2143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764acd494c3b9484b8b4dba995f0ddf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
   xr: {fileID: 1097661632}
   xr2: {fileID: 132259874}
   tracker: {fileID: 0}
@@ -2440,7 +2441,7 @@ PrefabInstance:
     - target: {fileID: 8429981633443581383, guid: 1670dca8ee98f864eb412b51a24c08e1, type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[0].m_LocomotionProvider
       value: 
-      objectReference: {fileID: 1317804324}
+      objectReference: {fileID: 1317804327}
     - target: {fileID: 8429981633443581383, guid: 1670dca8ee98f864eb412b51a24c08e1, type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[0].m_OverrideParameters.m_EaseInTime
       value: 0.3

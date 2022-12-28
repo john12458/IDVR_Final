@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class MoveProvider : MonoBehaviour
+public class MoveProvider : LocomotionProvider
 {
     
     public XRBaseController xr;
@@ -60,7 +60,6 @@ public class MoveProvider : MonoBehaviour
     }
 
     void ride(){
-        
         negativeAcc = 0.2f;
         if(pf.speed-negativeAcc < 0) pf.speed = 0;
         else pf.speed -= negativeAcc;
@@ -71,6 +70,7 @@ public class MoveProvider : MonoBehaviour
         Debug.Log("ride test foward_value2  " + foward_value2);
         if(currTime >= 0.1f){
             if(foward_value > 0.1f && foward_value2 > 0.1f){
+
                 pf.speed += 3;
                 pf.speed = Mathf.Min(35, pf.speed);
                 Debug.Log("speed: " + pf.speed);
@@ -80,7 +80,32 @@ public class MoveProvider : MonoBehaviour
             py2 = xr2.transform.position.y;
             currTime = 0;
         }
-        
+
+        if (pf.speed > 20) { 
+             locomotionPhase = LocomotionPhase.Moving;
+        }else {
+            locomotionPhase = LocomotionPhase.Done;
+        }
+
+    }
+    void LatedUpdate() { 
+
+        //  if(canMove){
+        //     switch(currMoveState)
+        //     {
+        //         case MoveState.RUN:
+        //             break;
+        //         case MoveState.RIDE:                    
+        //             if (pf.speed > 20) { 
+        //                 locomotionPhase = LocomotionPhase.Moving;
+        //             }else {
+        //                 locomotionPhase = LocomotionPhase.Idle;
+        //             }
+        //             break;
+        //         case MoveState.BIKE:
+        //             break;
+        //     }
+        // }
 
     }
 
@@ -107,12 +132,11 @@ public class MoveProvider : MonoBehaviour
         playerOrigin.Move(dir * bikeSpeed * Time.deltaTime);
         
         // bikeObject rotation with tracker
-        float rotationValue= tracker.transform.rotation.y;
-         bikeObject.transform.rotation = new Quaternion(
-            bikeObject.transform.rotation.x,
+        float rotationValue= tracker.transform.eulerAngles.y;
+         bikeObject.transform.eulerAngles = new Vector3(
+            bikeObject.transform.eulerAngles.x,
             rotationValue,
-            bikeObject.transform.rotation.z,
-            bikeObject.transform.rotation.w);
+            bikeObject.transform.eulerAngles.z);
 
     }
     void Update()
